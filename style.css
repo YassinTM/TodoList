@@ -32,13 +32,16 @@ h1 {
   background-color: rgb(255, 255, 230);
 
 }
-.addTask textarea {
+.addTask input {
   resize: none;
   border-radius: 4px;
   width: 50%;
   background-color: rgb(16, 16, 14);
   color: rgb(255, 255, 230);
   font-family: "Chillax", sans-serif;
+        border-style: solid;
+  border-color: rgb(255, 255, 230);
+
 }
 #tasklist{
     list-style: none;
