@@ -8,7 +8,7 @@ const taskList = document.getElementById("tasklist");
 
 function addTask() {
     //.innerHTML += takes that string and converts it to real HTML elements
-    taskList.innerHTML += "<li>${taskToAdd}</li>";
+    taskList.innerHTML += '<li>${taskToAdd}</li>';
 }
 //Adding a event listener to the button, this way i can listen to certain actions performed to my button. 
 //Using click event listener here, takes 2 args, type of event, and function to run
