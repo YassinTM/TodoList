@@ -1,3 +1,7 @@
+h1{
+    font-family: 'Clash Display', sans-serif;
+
+}
 .addTask{
     display: flex;
     justify-content: space-evenly;
