@@ -5,7 +5,8 @@ const addButton = document.getElementById("taskaddbutton");
 //To get not the item but the actual value of the input you getElementById and add .value
 //const taskToAdd = document.getElementById("taskaddinput").value;
 const taskList = document.getElementById("tasklist");
-
+let currentDate = new Date().toLocaleDateString('en-US', {weekday: 'long', month: 'short', day: 'numeric' })
+document.querySelector("h1").innerText =  currentDate;
 function addTask() {
     //.innerHTML += takes that string and converts it to real HTML elements
   let taskToAdd = document.getElementById("taskaddinput").value;
