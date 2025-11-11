@@ -11,7 +11,12 @@ function addTask() {
   let taskToAdd = document.getElementById("taskaddinput").value;
   //check to avoid adding empty tasks
   if (taskToAdd != "") {
-    taskList.innerHTML += `<li>${taskToAdd}</li>`;
+    //taskList.innerHTML += `<li>${taskToAdd}</li>`;
+    //innerHTML replaces entire HTML item, instead recommended to create a new element 
+    // and append to current list - does not interfere with future event listeners
+    let taskli = document.createElement("li")
+    taskli.innerText = taskToAdd;
+    taskList.appendChild(taskli);
     //set the input box to empty after adding task
     document.getElementById("taskaddinput").value = "";
   }
