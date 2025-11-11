@@ -1,6 +1,14 @@
+body{
+    background-color: rgb(16, 16, 14);
+    color: rgb(255, 255, 230);
+    font-size: 1rem;
+}
+p{
+    font-size: 1rem;
+}
 h1{
     font-family: 'Clash Display', sans-serif;
-
+    font-size: 3.815rem; /*Trying to use rules of major third*/
 }
 .addTask{
     display: flex;
