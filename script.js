@@ -10,13 +10,16 @@ document.querySelector("h1").innerText =  currentDate;
 function addTask() {
     //.innerHTML += takes that string and converts it to real HTML elements
   let taskToAdd = document.getElementById("taskaddinput").value;
+  let checkbox = document.createElement("input");
+  checkbox.type = "checkbox"
   //check to avoid adding empty tasks
   if (taskToAdd != "") {
     //taskList.innerHTML += `<li>${taskToAdd}</li>`;
     //innerHTML replaces entire HTML item, instead recommended to create a new element 
     // and append to current list - does not interfere with future event listeners
-    let taskli = document.createElement("li")
+    let taskli = document.createElement("li");
     taskli.innerText = taskToAdd;
+    taskli.appendChild(checkbox);
     taskList.appendChild(taskli);
     //set the input box to empty after adding task
     document.getElementById("taskaddinput").value = "";
@@ -27,3 +30,6 @@ function addTask() {
 //Using click event listener here, takes 2 args, type of event, and function to run
 //dont use the addTask() as it calls the function instantly use addTask and let the eventlistener trigger the function itself
 addButton.addEventListener('click', addTask)
+
+
+//
