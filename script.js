@@ -10,8 +10,24 @@ document.querySelector("h1").innerText =  currentDate;
 function addTask() {
     //.innerHTML += takes that string and converts it to real HTML elements
   let taskToAdd = document.getElementById("taskaddinput").value;
+  //creating input in function to add to the task, set input to checkbox and add eventlistener to each created checkbox
   let checkbox = document.createElement("input");
   checkbox.type = "checkbox"
+  //adding "anonymous function inside the event listener, simpler way to handle scope at this moment; passing event into the function as a param to use event.target to target the clicked checkbox
+  checkbox.addEventListener('change', function(event){
+    let selectedCheckbox = event.target;
+    //storing the actual list item that is parent of the selected checkbox
+    let parentlist = selectedCheckbox.parentElement;
+    if (selectedCheckbox.checked) {
+        //adding specific completedTask to list if checked or removed if off to edit styling
+        parentlist.classList.add("completedTask");
+    }
+    else if(!selectedCheckbox.checked){
+                parentlist.classList.remove("completedTask");
+
+    }
+  });
+
   //check to avoid adding empty tasks
   if (taskToAdd != "") {
     //taskList.innerHTML += `<li>${taskToAdd}</li>`;
@@ -26,10 +42,12 @@ function addTask() {
   }
     
 }
+
+
+
 //Adding a event listener to the button, this way i can listen to certain actions performed to my button. 
 //Using click event listener here, takes 2 args, type of event, and function to run
 //dont use the addTask() as it calls the function instantly use addTask and let the eventlistener trigger the function itself
-addButton.addEventListener('click', addTask)
-
+addButton.addEventListener('click', addTask);
 
 //
