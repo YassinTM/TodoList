@@ -1,37 +1,39 @@
-//I assign the element in my html, the button to a variable to work with it in JS, 
+//I assign the element in my html, the button to a variable to work with it in JS,
 // using const so I do not assign other elements to these vars by accident with let.
 
 const addButton = document.getElementById("taskaddbutton");
 //To get not the item but the actual value of the input you getElementById and add .value
 //const taskToAdd = document.getElementById("taskaddinput").value;
 const taskList = document.getElementById("tasklist");
-let currentDate = new Date().toLocaleDateString('en-US', {weekday: 'long', month: 'short', day: 'numeric' })
-document.querySelector("h1").innerText =  currentDate;
+let currentDate = new Date().toLocaleDateString("en-US", {
+  weekday: "long",
+  month: "short",
+  day: "numeric",
+});
+document.querySelector("h1").innerText = currentDate;
 function addTask() {
-    //.innerHTML += takes that string and converts it to real HTML elements
+  //.innerHTML += takes that string and converts it to real HTML elements
   let taskToAdd = document.getElementById("taskaddinput").value;
   //creating input in function to add to the task, set input to checkbox and add eventlistener to each created checkbox
   let checkbox = document.createElement("input");
-  checkbox.type = "checkbox"
+  checkbox.type = "checkbox";
   //adding "anonymous function inside the event listener, simpler way to handle scope at this moment; passing event into the function as a param to use event.target to target the clicked checkbox
-  checkbox.addEventListener('change', function(event){
+  checkbox.addEventListener("change", function (event) {
     let selectedCheckbox = event.target;
     //storing the actual list item that is parent of the selected checkbox
     let parentlist = selectedCheckbox.parentElement;
     if (selectedCheckbox.checked) {
-        //adding specific completedTask to list if checked or removed if off to edit styling
-        parentlist.classList.add("completedTask");
-    }
-    else if(!selectedCheckbox.checked){
-                parentlist.classList.remove("completedTask");
-
+      //adding specific completedTask to list if checked or removed if off to edit styling
+      parentlist.classList.add("completedTask");
+    } else {
+      parentlist.classList.remove("completedTask");
     }
   });
 
   //check to avoid adding empty tasks
   if (taskToAdd != "") {
     //taskList.innerHTML += `<li>${taskToAdd}</li>`;
-    //innerHTML replaces entire HTML item, instead recommended to create a new element 
+    //innerHTML replaces entire HTML item, instead recommended to create a new element
     // and append to current list - does not interfere with future event listeners
     let taskli = document.createElement("li");
     taskli.innerText = taskToAdd;
@@ -40,14 +42,11 @@ function addTask() {
     //set the input box to empty after adding task
     document.getElementById("taskaddinput").value = "";
   }
-    
 }
 
-
-
-//Adding a event listener to the button, this way i can listen to certain actions performed to my button. 
+//Adding a event listener to the button, this way i can listen to certain actions performed to my button.
 //Using click event listener here, takes 2 args, type of event, and function to run
 //dont use the addTask() as it calls the function instantly use addTask and let the eventlistener trigger the function itself
-addButton.addEventListener('click', addTask);
+addButton.addEventListener("click", addTask);
 
 //
