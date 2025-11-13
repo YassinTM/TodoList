@@ -43,6 +43,15 @@ h1 {
 #tasklist {
   list-style: none;
 }
-.completedTask{
-text-decoration: line-through;
+.completedTask {
+  text-decoration: line-through;
+  text-decoration-color: orange;
+  opacity: 0.8;
+}
+#tasklist input {
+  background-color: rgb(16, 16, 14);
+  border-color: rgb(255, 255, 230);
+  border-radius: 4px;
+  /*styles above not working? have to check it out*/
+  vertical-align: middle;
 }
