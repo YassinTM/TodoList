@@ -5,6 +5,8 @@ const addButton = document.getElementById("taskaddbutton");
 //To get not the item but the actual value of the input you getElementById and add .value
 //const taskToAdd = document.getElementById("taskaddinput").value;
 const taskList = document.getElementById("tasklist");
+let tasksAray = []; //Array to save tasks cleanly using local storage
+
 let currentDate = new Date().toLocaleDateString("en-US", {
   weekday: "long",
   month: "short",
