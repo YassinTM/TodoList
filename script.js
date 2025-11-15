@@ -74,7 +74,7 @@ function renderTask() {
     deletebutton.addEventListener("click", function () {
       //function filters all items in array, adds every item that is not = to the one being deleted to new array and saves to "new array" called taskArray - replacing the old one 
       tasksArray = tasksArray.filter(function(task){
-        task != taskitem;
+      return  task != taskitem;
       });
       renderTask();
     })
