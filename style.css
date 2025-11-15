@@ -49,9 +49,14 @@ h1 {
   opacity: 0.8;
 }
 #tasklist input {
+  /*
   background-color: rgb(16, 16, 14);
   border-color: rgb(255, 255, 230);
   border-radius: 4px;
   /*styles above not working? have to check it out*/
   vertical-align: middle;
+}
+#tasklist li button{
+  width: 20px;
+  aspect-ratio: 1;
 }

@@ -68,6 +68,16 @@ function renderTask() {
         parentli.classList.remove("completedTask");
       }
     });
+    //create the delete button
+    let deletebutton = document.createElement("button");
+//add event listener to that button to listen for a click
+    deletebutton.addEventListener("click", function () {
+      //function filters all items in array, adds every item that is not = to the one being deleted to new array and saves to "new array" called taskArray - replacing the old one 
+      tasksArray = tasksArray.filter(function(task){
+        task != taskitem;
+      });
+      renderTask();
+    })
 
     //create a li
     let taskli = document.createElement("li");
@@ -75,6 +85,9 @@ function renderTask() {
     taskli.innerText = taskitem;
     //add a checkbox to every li
     taskli.appendChild(checkbox);
+
+    taskli.appendChild(deletebutton);
+
     //add li to ul
     taskList.appendChild(taskli);
   });
