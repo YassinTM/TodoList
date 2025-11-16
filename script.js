@@ -22,7 +22,7 @@ let currentDate = new Date().toLocaleDateString("en-US", {
   day: "numeric",
 });
 //Fill live date in H1
-document.querySelector("h1").innerText = currentDate;
+document.querySelector("h2").innerText = currentDate;
 
 function addTask() {
   //saving text from input into variable
@@ -70,6 +70,7 @@ function renderTask() {
     });
     //create the delete button
     let deletebutton = document.createElement("button");
+    deletebutton.innerText = "✕"
 //add event listener to that button to listen for a click
     deletebutton.addEventListener("click", function () {
       //function filters all items in array, adds every item that is not = to the one being deleted to new array and saves to "new array" called taskArray - replacing the old one 
