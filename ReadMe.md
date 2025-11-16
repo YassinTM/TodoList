@@ -6,5 +6,9 @@ A simple to-do list built with **HTML**, **CSS**, and **JavaScript**.
 Under construction.
 
 ## To Do
-- Add delete functionality with button
-- Save to-do list in localStorage
+- Persist checkbox states in localStorage (object)
+- Make layout moblile friendly
+
+### Bugs to Fix
+- Only delete the clicked task — currently deletes all tasks with matching text
+- Preserve completed state when adding new tasks
