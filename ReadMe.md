@@ -7,7 +7,7 @@ Under construction.
 
 ## To Do
 - Persist checkbox states in localStorage (object)
-- Make layout moblile friendly
+
 
 ### Bugs to Fix
 - Only delete the clicked task — currently deletes all tasks with matching text
